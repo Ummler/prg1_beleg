@@ -80,6 +80,12 @@ Contact* quickSortRecur(Contact* head, Contact* end, int field) {
     return newHead;
 }
 
+int startsWith(const char *pre, const char *str)
+{
+    return strncmp(pre, str, strlen(pre)) == 0;
+}
+
+
 void sortContacts(int order, int field) {
     head = quickSortRecur(head, getTail(head), field);
 
@@ -98,11 +104,18 @@ void sortContacts(int order, int field) {
 }
 
 void searchContacts(char* searchTerm) {
+    int num = 0;
     Contact* ptr = head;
     while(ptr != NULL) {
-        if(strcmp(ptr->name, searchTerm) == 0 || strcmp(ptr->firstname, searchTerm) == 0 || strcmp(ptr->phoneNumber, searchTerm) == 0) {
+        if(startsWith(searchTerm, ptr->name) || startsWith(searchTerm, ptr->firstname) || startsWith(searchTerm, ptr->phoneNumber)) {
             printf("%s | %s | %s\n", ptr->name, ptr->firstname, ptr->phoneNumber);
+            num++;
         }
         ptr = ptr->next;
+    }
+    if (num == 0) {
+        printf("Keine Kontakte gefunden.\n");
+    } else {
+        printf("> Anzahl der Kontakte: %d\n", num);
     }
 }

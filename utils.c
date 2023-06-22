@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-   
+
 
 void generateRandomContacts(int num) {
     FILE* file = fopen("example_contacts.csv", "r");
@@ -29,3 +29,5 @@ void generateRandomContacts(int num) {
     
     fclose(file);
 }
+
+

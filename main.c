@@ -35,14 +35,22 @@ int main(int argc, char *argv[]) {
 
         int order = (strcmp(sort_order, "A") == 0) ? 1 : 2;
         int field = (strcmp(sort_field, "Name") == 0) ? 1 : ((strcmp(sort_field, "Vorname") == 0) ? 2 : 3);
-
+        int num = 0;
         sortContacts(order, field);
 
         Contact* ptr = head;
         while(ptr != NULL) {
             printf("%s | %s | %s\n", ptr->name, ptr->firstname, ptr->phoneNumber);
             ptr = ptr->next;
+            num++;
         }
+        if (num == 0) {
+            printf("Keine Kontakte gefunden.\n");
+        } else {
+            printf("> Anzahl der Kontakte: %d\n", num);
+        }
+
+        //
     } else if(strcmp(argv[1], "-s") == 0) {
         if(argc != 3) {
             printf("Falsche Anzahl von Argumenten für die Option -s\n");
