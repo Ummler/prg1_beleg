@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
         Contact *ptr = head;
         while (ptr != NULL)
         {
-            printf("%s | %s | %s\n", ptr->name, ptr->firstname, ptr->phoneNumber);
+            printf("%-20s | %-20s | %-15s\n", ptr->name, ptr->firstname, ptr->phoneNumber);
             ptr = ptr->next;
             num++;
         }

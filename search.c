@@ -122,7 +122,7 @@ void searchContacts(char *searchTerm)
     {
         if (startsWith(searchTerm, ptr->name) || startsWith(searchTerm, ptr->firstname) || startsWith(searchTerm, ptr->phoneNumber))
         {
-            printf("%s | %s | %s\n", ptr->name, ptr->firstname, ptr->phoneNumber);
+            printf("%-20s | %-20s | %-15s\n", ptr->name, ptr->firstname, ptr->phoneNumber);
             num++;
         }
         ptr = ptr->next;
