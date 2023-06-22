@@ -20,7 +20,7 @@ void generateRandomContacts(int num) {
         char *firstname = strtok(NULL, ",");
         char *phoneNumber = strtok(NULL, ",");
         
-        // Entfernen Sie das newline-Zeichen vom Ende der Telefonnummer
+        // Entfernen des newline-Zeichens vom Ende der Telefonnummer
         phoneNumber[strcspn(phoneNumber, "\n")] = 0;
 
         addContact(createContact(name, firstname, phoneNumber));

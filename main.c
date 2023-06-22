@@ -5,10 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-void usage(char* progName);
-extern Contact* head;
-int main(int argc, char *argv[]) {
-    if(argc < 2) {
+void usage(char *progName);
+extern Contact *head;
+int main(int argc, char *argv[])
+{
+    if (argc < 2)
+    {
         usage(argv[0]);
         return -1;
     }
@@ -16,15 +18,19 @@ int main(int argc, char *argv[]) {
     // Initialisiere Kontaktliste
     readContactsFromFile();
 
-    if(strcmp(argv[1], "-n") == 0) {
-        if(argc != 5) {
+    if (strcmp(argv[1], "-n") == 0)
+    {
+        if (argc != 5)
+        {
             printf("Falsche Anzahl von Argumenten für die Option -n\n");
             usage(argv[0]);
             return -1;
         }
         addContact(createContact(argv[2], argv[3], argv[4]));
         printf("Kontakt erfolgreich hinzugefügt.\n");
-    } else if(strcmp(argv[1], "-o") == 0) {
+    }
+    else if (strcmp(argv[1], "-o") == 0)
+    {
         char sort_order[10];
         char sort_field[10];
 
@@ -38,33 +44,46 @@ int main(int argc, char *argv[]) {
         int num = 0;
         sortContacts(order, field);
 
-        Contact* ptr = head;
-        while(ptr != NULL) {
+        Contact *ptr = head;
+        while (ptr != NULL)
+        {
             printf("%s | %s | %s\n", ptr->name, ptr->firstname, ptr->phoneNumber);
             ptr = ptr->next;
             num++;
         }
-        if (num == 0) {
+        if (num == 0)
+        {
             printf("Keine Kontakte gefunden.\n");
-        } else {
+        }
+        else
+        {
             printf("> Anzahl der Kontakte: %d\n", num);
         }
 
         //
-    } else if(strcmp(argv[1], "-s") == 0) {
-        if(argc != 3) {
+    }
+    else if (strcmp(argv[1], "-s") == 0)
+    {
+        if (argc != 3)
+        {
             printf("Falsche Anzahl von Argumenten für die Option -s\n");
             usage(argv[0]);
             return -1;
         }
         searchContacts(argv[2]);
-    } else if(strcmp(argv[1], "-k") == 0) {
+    }
+    else if (strcmp(argv[1], "-k") == 0)
+    {
         deleteAllContacts();
         printf("Alle Kontakte erfolgreich gelöscht.\n");
-    } else if(strcmp(argv[1], "-c") == 0) {
+    }
+    else if (strcmp(argv[1], "-c") == 0)
+    {
         generateRandomContacts(25);
         printf("25 zufällige Kontakte erfolgreich erstellt.\n");
-    } else {
+    }
+    else
+    {
         printf("Unbekannte Option: %s\n", argv[1]);
         usage(argv[0]);
         return -1;
@@ -75,7 +94,8 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-void usage(char* progName) {
+void usage(char *progName)
+{
     fprintf(stderr, "Usage: %s [option] [arguments]\n", progName);
     fprintf(stderr, "Options:\n");
     fprintf(stderr, "-n [Name] [Vorname] [Telefonnummer] : neuen Kontakt hinzufügen\n");

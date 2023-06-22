@@ -21,6 +21,8 @@ Das Projekt ist wie folgt strukturiert:
 - `contacts.c` und `contacts.h`: Enthalten die Struktur `Contact` und Funktionen zur Verwaltung von Kontakten.
 - `search.c` und `search.h`: Enthalten Funktionen zur Durchführung von Such- und Sortieroperationen auf Kontakten.
 - `utils.c` und `utils.h`: Enthalten Hilfsfunktionen, die von den anderen Modulen verwendet werden.
+- `contacts.csv` ist die Datei, in der alle gespeicherten Kontakte kommasepariert gespeichert werden.
+- `example_contacs.csv` ist eine Datei im selben Format wie `contacts.csv`. Diese Datei ist vorangig zu Testzwecken angedacht.
 
 ## Funktionsweise
 
@@ -28,9 +30,9 @@ Das Programm unterstützt die folgenden Befehle:
 
 - `-n [Name] [Vorname] [Telefonnummer]`: Erstellt einen neuen Kontakt.
 - `-o`: Sortiert und listet Kontakte auf. Es wird eine Abfrage zur Auswahl des Sortierparameters und der Sortierreihenfolge angezeigt.
-- `-s [Argument]`: Sucht nach Kontakten, die das angegebene Argument enthalten. Dabei ist es auch möglich einen Namens- oder Telefonnummernanfang einzugeben, um alle darauf zutreffenden Ergebnisse angezeigt zu bekommen.
+- `-s [Argument]`: Sucht nach Kontakten, die das angegebene Argument enthalten. Dabei ist es auch möglich einen Namens- oder Telefonnummernanfang einzugeben, um alle darauf zutreffenden Ergebnisse gelistet angezeigt zu bekommen.
 - `-k`: Löscht alle Kontakte.
-- `-c`: Erstellt 25 zufällige Kontakte.
+- `-c`: Erstellt alle Kontakte, die in der Datei `example_contacts.csv` liegen. Diese Option ist vorangig zum Testen des Programmes angedacht.
 
 ## Struct Implementierung
 
