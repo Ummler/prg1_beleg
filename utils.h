@@ -1,0 +1,1 @@
+void generateRandomContacts(int numberOfContacts);
