@@ -19,3 +19,5 @@ Die Programme müssen auf den Rechnern in den Laboren der Fakultät vorgeführt 
 Programmieren Sie ein elektronisches Telfonverzeichnis.
 Das Programm soll Datensätze, die Name, Vorname und Telefonnummer von Personen speichern, verwalten.
 Es soll auch eine Suche nach der Telefonnummer ermöglichen, um die zugeordnete Person zu finden.
+
+
